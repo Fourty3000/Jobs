@@ -139,25 +139,97 @@
         <p>Rejoins l'équipe créative du projet.</p>
       </div>
 
-      <div class="job-card">
-        <div class="badge open">🟢 Recrutement Ouvert</div>
+      <div class="job-card" data-open="true">
+          <div class="badge open">🟢 Recrutement Ouvert</div>
 
-        <h2>Monteur Vidéo Bénévole</h2>
+          <h2>Développeur Bénévole</h2>
 
-        <p>
-          Montage de vidéos YouTube, shorts, trailers et contenus
-          communautaires.
-        </p>
+          <p>
+            Développement des utilitaires et fonctionnalités pour aider Fourty3000
+          </p>
 
-        <a
-          class="apply-btn"
-          href="https://forms.gle/G5EDgQ364qZw7pbB9"
-          target="_blank"
-        >
-          Postuler
-        </a>
-      </div>
-    </div>
+          <a
+            class="apply-btn"
+            href="https://forms.gle/3siYBtX4nPQhiFpA8"
+            target="_blank"
+          >
+            Postuler
+          </a>
+        </div>
+
+      <div class="job-card" data-open="true">
+          <div class="badge open">🟢 Recrutement Ouvert</div>
+
+          <h2>Animateur Évènementiel & Support (AES)</h2>
+
+          <p>
+            Organisation d'évènements, animation de la communauté et assistance
+            des joueurs sur les différentes plateformes Eminium.
+          </p>
+
+          <a
+            class="apply-btn"
+            href="https://forms.gle/rSrvEKzKUQ7ErCXs5"
+            target="_blank"
+          >
+            Postuler
+          </a>
+        </div>
+
+      <div class="job-card" data-open="true">
+          <div class="badge open">🟢 Recrutement Ouvert</div>
+
+          <h2>Graphiste</h2>
+
+          <p>
+            Chargé de faire les différents graphismes liés aux projets de Fourty3000
+          </p>
+
+          <a
+            class="apply-btn"
+            href="https://forms.gle/7YUd2C4gH1qR7N3C7"
+            target="_blank"
+          >
+            Postuler
+          </a>
+        </div>
+
+      <div class="job-card" data-open="true">
+          <div class="badge open">🟢 Recrutement Ouvert</div>
+
+          <h2>Modérateur</h2>
+
+          <p>
+            Modération du serveur Discord de Fourty3000. Peut aussi demander à devenir modérateur YouTube + Twitch
+          </p>
+
+          <a
+            class="apply-btn"
+            href="https://forms.gle/7YUd2C4gH1qR7N3C7"
+            target="_blank"
+          >
+            Postuler
+          </a>
+        </div>
+
+      <div class="job-card" data-open="true">
+          <div class="badge open">🟢 Recrutement Ouvert</div>
+
+          <h2>Monteur Vidéo</h2>
+
+          <p>
+            Chargé du montage des vidéos de Fourty3000
+          </p>
+
+          <a
+            class="apply-btn"
+            href="https://forms.gle/YaAmH1xeyNhmVbng7"
+            target="_blank"
+          >
+            Postuler
+          </a>
+        </div>
+    
 
       <footer>© 2026 Eminium Games</footer>
     </div>
@@ -166,7 +238,7 @@
       // true = ouvert
       // false = fermé
 
-      const recruitmentOpen = true;
+      const recruitmentOpen = [false];
 
       const badge = document.querySelector(".badge");
       const button = document.querySelector(".apply-btn");
