@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Fourty3000 — Careers</title>
+  <title>Eminium Games — Recrutement</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -11,6 +11,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
 
   <style>
+
     *{
       margin:0;
       padding:0;
@@ -18,20 +19,26 @@
     }
 
     :root{
-      --bg:#050505;
-      --card:#111;
-      --muted:#9a9a9a;
+      --bg:#070A12;
+      --card:rgba(255,255,255,.03);
+      --border:rgba(255,255,255,.08);
+
       --text:#fff;
+      --muted:#9aa4b2;
 
       --green:#22c55e;
       --red:#ef4444;
 
-      --accent:#ff6a00;
+      --blue:#4f8cff;
     }
 
     body{
       font-family:Inter,sans-serif;
-      background:var(--bg);
+      background:
+        radial-gradient(circle at top, rgba(79,140,255,.12), transparent 35%),
+        radial-gradient(circle at bottom, rgba(34,197,94,.08), transparent 35%),
+        var(--bg);
+
       color:var(--text);
       padding:60px 20px;
     }
@@ -54,68 +61,55 @@
       margin-bottom:10px;
     }
 
+    .hero span{
+      color:var(--blue);
+    }
+
     .hero p{
       color:var(--muted);
-      max-width:600px;
+      max-width:650px;
       margin:auto;
-      line-height:1.6;
+      line-height:1.7;
     }
 
     /* GRID */
 
     .grid{
       display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-      gap:20px;
+      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+      gap:18px;
     }
 
     /* CARD */
 
     .card{
-      background:rgba(255,255,255,.03);
-      border:1px solid rgba(255,255,255,.08);
-      border-radius:20px;
-      padding:22px;
+      background:var(--card);
+      border:1px solid var(--border);
+      border-radius:18px;
+
+      padding:20px;
 
       transition:.25s;
     }
 
     .card:hover{
       transform:translateY(-6px);
-      border-color:rgba(255,106,0,.3);
+      border-color:rgba(79,140,255,.35);
     }
 
-    .top{
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      margin-bottom:15px;
-    }
-
-    .badge{
-      font-size:.75rem;
-      font-weight:700;
-      padding:6px 10px;
-      border-radius:999px;
-    }
-
-    .open{
-      background:rgba(34,197,94,.15);
-      color:var(--green);
-    }
-
-    .closed{
-      background:rgba(239,68,68,.15);
-      color:var(--red);
+    .icon{
+      font-size:1.5rem;
+      margin-bottom:10px;
     }
 
     h2{
-      font-size:1.4rem;
-      margin-bottom:10px;
+      font-size:1.2rem;
+      margin-bottom:8px;
     }
 
     p{
       color:var(--muted);
+      font-size:.95rem;
       line-height:1.5;
       margin-bottom:18px;
     }
@@ -123,32 +117,28 @@
     .btn{
       display:block;
       text-align:center;
+
       padding:12px;
+
       border-radius:12px;
+
       font-weight:700;
       text-decoration:none;
 
-      background:linear-gradient(90deg,#ff6a00,#ff3d00);
-      color:white;
+      background:#fff;
+      color:#000;
 
       transition:.2s;
     }
 
     .btn:hover{
-      opacity:.9;
-      transform:scale(1.02);
-    }
-
-    .btn.disabled{
-      background:#222;
-      color:#777;
-      pointer-events:none;
+      transform:scale(1.03);
     }
 
     footer{
       text-align:center;
       margin-top:60px;
-      color:#666;
+      color:#6b7280;
       font-size:.9rem;
     }
 
@@ -160,80 +150,66 @@
   <div class="container">
 
     <div class="hero">
-      <h1>Fourty3000 Careers</h1>
+      <h1>
+        Recrutement <span>Eminium</span>
+      </h1>
+
       <p>
-        Rejoins une équipe créative autour du développement, design, contenu et communauté.
+        Rejoins l’équipe Eminium Games et participe au développement
+        du serveur, des événements et de la communauté Minecraft.
       </p>
     </div>
 
     <div class="grid">
 
       <!-- DEV -->
-      <div class="card" data-open="false">
-        <div class="top">
-          <span class="badge open">Open</span>
-        </div>
+      <div class="card">
+        <div class="icon">💻</div>
+        <h2>Développeur Bénévole</h2>
+        <p>Création de plugins, systèmes et fonctionnalités serveur.</p>
 
-        <h2>Développeur</h2>
-        <p>Création de systèmes et outils pour les projets Fourty3000.</p>
-
-        <a class="btn" href="https://forms.gle/3siYBtX4nPQhiFpA8" target="_blank">
-          Postuler
-        </a>
-      </div>
-
-      <!-- AES -->
-      <div class="card" data-open="true">
-        <div class="top">
-          <span class="badge open">Open</span>
-        </div>
-
-        <h2>AES</h2>
-        <p>Animation, événements et gestion communautaire.</p>
-
-        <a class="btn" href="https://forms.gle/rSrvEKzKUQ7ErCXs5" target="_blank">
-          Postuler
-        </a>
-      </div>
-
-      <!-- GRAPHISTE -->
-      <div class="card" data-open="true">
-        <div class="top">
-          <span class="badge open">Open</span>
-        </div>
-
-        <h2>Graphiste</h2>
-        <p>Création visuelle, branding et assets du projet.</p>
-
-        <a class="btn" href="https://forms.gle/oqc54bsxhNCvJqA9A" target="_blank">
+        <a class="btn"
+           href="https://forms.gle/PYZTYrVAWy7fNsPaA"
+           target="_blank">
           Postuler
         </a>
       </div>
 
       <!-- MOD -->
-      <div class="card" data-open="true">
-        <div class="top">
-          <span class="badge open">Open</span>
-        </div>
-
+      <div class="card">
+        <div class="icon">🛡️</div>
         <h2>Modérateur</h2>
-        <p>Gestion du Discord et support communauté.</p>
+        <p>Gestion du Discord et de la communauté Eminium.</p>
 
-        <a class="btn" href="https://forms.gle/PBJdrN2STnD5hqbi9" target="_blank">
+        <a class="btn"
+           href="https://forms.gle/W9CvEbPsYDnrpuR58"
+           target="_blank">
           Postuler
         </a>
       </div>
 
-      <!-- VIDEO -->
-      <div class="card" data-open="true">
-        <div class="top">
-          <span class="badge open">Open</span>
-        </div>
+      <!-- GRAPHISTE -->
+      <div class="card">
+        <div class="icon">🎨</div>
+        <h2>Graphiste</h2>
+        <p>Création des visuels, logos, bannières et assets.</p>
 
-        <h2>Monteur Vidéo</h2>
-        <p>Montage de contenus YouTube, shorts et réseaux sociaux.</p>
+        <a class="btn"
+           href="https://forms.gle/R8ow3ECAvSykpZmg9"
+           target="_blank">
+          Postuler
+        </a>
+      </div>
 
-        <a class="btn" href="https://forms.gle/YaAmH1xeyNhmVbng7" target="_blank">
+      <!-- AES -->
+      <div class="card">
+        <div class="icon">🎉</div>
+        <h2>AES</h2>
+        <p>Animation des événements et support de la communauté.</p>
+
+        <a class="btn"
+           href="https://forms.gle/7ESCphfR78hXzq2s5"
+           target="_blank">
           Postuler
         </a>
       </div>
@@ -241,36 +217,10 @@
     </div>
 
     <footer>
-      © 2026 Fourty3000
+      © 2026 Eminium Games
     </footer>
 
   </div>
-
-  <script>
-    const cards = document.querySelectorAll(".card");
-
-    cards.forEach(card => {
-      const isOpen = card.dataset.open === "true";
-
-      const badge = card.querySelector(".badge");
-      const btn = card.querySelector(".btn");
-
-      if(!isOpen){
-
-        badge.classList.remove("open");
-        badge.classList.add("closed");
-        badge.textContent = "Closed";
-
-        btn.classList.add("disabled");
-        btn.textContent = "Unavailable";
-
-        // IMPORTANT : on garde le lien mais on bloque le clic
-        btn.addEventListener("click", (e) => {
-          e.preventDefault();
-        });
-      }
-    });
-  </script>
 
 </body>
 </html>
