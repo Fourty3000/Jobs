@@ -4,259 +4,513 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Fourty3000 Jobs</title>
+  <title>Fourty3000 Careers</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
   <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
     rel="stylesheet"
   />
 
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
     }
 
-    :root {
-      --bg: #020617;
-      --card: rgba(15, 23, 42, 0.75);
-      --border: rgba(255, 255, 255, 0.08);
+    :root{
+      --bg:#050816;
+      --card:#0f172a;
+      --card-2:#111c34;
 
-      --text: #ffffff;
-      --muted: #94a3b8;
+      --border:rgba(255,255,255,.08);
 
-      --orange: #f97316;
-      --red: #ef4444;
+      --text:#ffffff;
+      --muted:#94a3b8;
 
-      --green: #22c55e;
-      --green-bg: rgba(34, 197, 94, 0.12);
+      --orange:#ff7b00;
+      --red:#ff3b3b;
 
-      --danger: #ef4444;
-      --danger-bg: rgba(239, 68, 68, 0.12);
+      --green:#22c55e;
+      --green-bg:rgba(34,197,94,.12);
+
+      --closed:#ef4444;
+      --closed-bg:rgba(239,68,68,.12);
     }
 
-    body {
-      font-family: "Inter", sans-serif;
+    body{
+      font-family:"Inter",sans-serif;
       background:
-        radial-gradient(circle at top, rgba(249, 115, 22, 0.12), transparent 30%),
-        linear-gradient(135deg, #111827 0%, #020617 100%);
-      color: var(--text);
-      min-height: 100vh;
-      padding: 60px 20px;
-      overflow-x: hidden;
+        radial-gradient(circle at top left, rgba(255,123,0,.15), transparent 25%),
+        radial-gradient(circle at bottom right, rgba(255,59,59,.12), transparent 25%),
+        linear-gradient(180deg,#020617 0%, #050816 100%);
+
+      color:var(--text);
+      min-height:100vh;
+      overflow-x:hidden;
     }
 
-    .container {
-      max-width: 1300px;
-      margin: auto;
+    a{
+      text-decoration:none;
+    }
+
+    .container{
+      width:min(1400px, calc(100% - 40px));
+      margin:auto;
+    }
+
+    /* NAVBAR */
+
+    .navbar{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+
+      padding:28px 0;
+    }
+
+    .logo{
+      font-size:1.3rem;
+      font-weight:900;
+      letter-spacing:.5px;
+    }
+
+    .logo span{
+      background:linear-gradient(90deg,var(--orange),var(--red));
+      -webkit-background-clip:text;
+      -webkit-text-fill-color:transparent;
+    }
+
+    .nav-btn{
+      padding:12px 18px;
+      border-radius:14px;
+
+      background:rgba(255,255,255,.06);
+      border:1px solid rgba(255,255,255,.08);
+
+      color:white;
+      font-weight:600;
+
+      transition:.2s ease;
+    }
+
+    .nav-btn:hover{
+      transform:translateY(-2px);
+      background:rgba(255,255,255,.1);
     }
 
     /* HERO */
 
-    .hero {
-      text-align: center;
-      margin-bottom: 70px;
+    .hero{
+      padding:80px 0 120px;
+      position:relative;
     }
 
-    .hero-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-
-      padding: 10px 18px;
-      border-radius: 999px;
-
-      background: rgba(255, 255, 255, 0.06);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-
-      color: #e2e8f0;
-      font-size: 0.9rem;
-      margin-bottom: 25px;
-
-      backdrop-filter: blur(10px);
+    .hero-grid{
+      display:grid;
+      grid-template-columns:1.1fr .9fr;
+      gap:50px;
+      align-items:center;
     }
 
-    .hero h1 {
-      font-size: clamp(3rem, 8vw, 5.5rem);
-      font-weight: 800;
-      line-height: 1;
+    .hero-left{
+      position:relative;
+      z-index:2;
+    }
 
-      background: linear-gradient(
+    .mini-badge{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+
+      padding:10px 16px;
+      border-radius:999px;
+
+      background:rgba(255,255,255,.05);
+      border:1px solid rgba(255,255,255,.08);
+
+      color:#dbeafe;
+      margin-bottom:30px;
+
+      backdrop-filter:blur(10px);
+    }
+
+    .hero h1{
+      font-size:clamp(3.5rem,9vw,7rem);
+      line-height:.95;
+      font-weight:900;
+
+      margin-bottom:28px;
+    }
+
+    .gradient{
+      background:linear-gradient(
         90deg,
-        #f97316,
-        #ef4444,
-        #fb7185
+        #ff7b00,
+        #ff3b3b,
+        #ff8a00
       );
 
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-
-      margin-bottom: 20px;
+      -webkit-background-clip:text;
+      -webkit-text-fill-color:transparent;
     }
 
-    .hero p {
-      max-width: 700px;
-      margin: auto;
+    .hero p{
+      color:var(--muted);
+      font-size:1.15rem;
+      line-height:1.8;
 
-      color: var(--muted);
-      font-size: 1.1rem;
-      line-height: 1.7;
+      max-width:700px;
+      margin-bottom:40px;
     }
 
-    /* GRID */
-
-    .jobs-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 30px;
+    .hero-buttons{
+      display:flex;
+      gap:18px;
+      flex-wrap:wrap;
     }
 
-    /* CARD */
+    .primary-btn{
+      background:linear-gradient(90deg,var(--orange),var(--red));
+      color:white;
 
-    .job-card {
-      position: relative;
+      padding:16px 24px;
+      border-radius:18px;
 
-      background: var(--card);
-      border: 1px solid var(--border);
+      font-weight:700;
 
-      border-radius: 28px;
-      padding: 30px;
-
-      backdrop-filter: blur(16px);
-
-      transition:
-        transform 0.25s ease,
-        border 0.25s ease,
-        box-shadow 0.25s ease;
+      transition:.25s ease;
     }
 
-    .job-card:hover {
-      transform: translateY(-8px);
+    .primary-btn:hover{
+      transform:translateY(-4px);
+      box-shadow:0 20px 40px rgba(255,123,0,.25);
+    }
 
-      border-color: rgba(249, 115, 22, 0.35);
+    .secondary-btn{
+      background:rgba(255,255,255,.06);
+      border:1px solid rgba(255,255,255,.08);
+
+      color:white;
+
+      padding:16px 24px;
+      border-radius:18px;
+
+      font-weight:700;
+
+      transition:.25s ease;
+    }
+
+    .secondary-btn:hover{
+      transform:translateY(-4px);
+    }
+
+    /* RIGHT HERO */
+
+    .hero-right{
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      position:relative;
+    }
+
+    .hero-card{
+      width:100%;
+      max-width:420px;
+
+      background:rgba(15,23,42,.75);
+      border:1px solid rgba(255,255,255,.08);
+
+      border-radius:32px;
+      padding:30px;
+
+      backdrop-filter:blur(18px);
 
       box-shadow:
-        0 20px 40px rgba(0, 0, 0, 0.35),
-        0 0 30px rgba(249, 115, 22, 0.08);
+        0 20px 60px rgba(0,0,0,.4),
+        0 0 50px rgba(255,123,0,.08);
     }
 
-    .top-row {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+    .hero-card-top{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
 
-      margin-bottom: 24px;
+      margin-bottom:25px;
     }
 
-    .badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
+    .online{
+      display:flex;
+      align-items:center;
+      gap:10px;
 
-      padding: 8px 14px;
-      border-radius: 999px;
-
-      font-size: 0.82rem;
-      font-weight: 700;
+      color:#4ade80;
+      font-weight:700;
     }
 
-    .badge.open {
-      background: var(--green-bg);
-      color: #4ade80;
-      border: 1px solid rgba(34, 197, 94, 0.25);
+    .dot{
+      width:10px;
+      height:10px;
+      border-radius:50%;
+      background:#4ade80;
+
+      box-shadow:0 0 20px #4ade80;
     }
 
-    .badge.closed {
-      background: var(--danger-bg);
-      color: #f87171;
-      border: 1px solid rgba(239, 68, 68, 0.25);
+    .hero-card h3{
+      font-size:2rem;
+      margin-bottom:10px;
     }
 
-    .job-icon {
-      font-size: 1.5rem;
+    .hero-card p{
+      color:#cbd5e1;
+      line-height:1.7;
+      margin-bottom:30px;
     }
 
-    .job-card h2 {
-      font-size: 1.6rem;
-      margin-bottom: 14px;
+    .stats{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:15px;
     }
 
-    .job-card p {
-      color: #cbd5e1;
-      line-height: 1.7;
-      margin-bottom: 28px;
-      min-height: 80px;
+    .stat{
+      background:rgba(255,255,255,.04);
+      border:1px solid rgba(255,255,255,.05);
+
+      padding:18px;
+      border-radius:18px;
+      text-align:center;
     }
 
-    /* BUTTON */
+    .stat h4{
+      font-size:1.5rem;
+      margin-bottom:5px;
+    }
 
-    .apply-btn {
-      display: flex;
-      justify-content: center;
-      align-items: center;
+    .stat span{
+      color:var(--muted);
+      font-size:.9rem;
+    }
 
-      width: 100%;
-      padding: 15px;
+    /* JOBS */
 
-      border-radius: 16px;
-      text-decoration: none;
+    .jobs-section{
+      padding-bottom:120px;
+    }
 
-      font-weight: 700;
-      color: white;
+    .section-title{
+      text-align:center;
+      margin-bottom:60px;
+    }
 
-      background: linear-gradient(
-        90deg,
-        #f97316,
-        #ef4444
+    .section-title h2{
+      font-size:3rem;
+      margin-bottom:15px;
+    }
+
+    .section-title p{
+      color:var(--muted);
+      font-size:1.05rem;
+    }
+
+    .jobs-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+      gap:28px;
+    }
+
+    .job-card{
+      position:relative;
+
+      background:linear-gradient(
+        180deg,
+        rgba(15,23,42,.9),
+        rgba(8,15,30,.95)
       );
 
-      transition:
-        transform 0.2s ease,
-        opacity 0.2s ease;
+      border:1px solid rgba(255,255,255,.08);
+
+      border-radius:30px;
+      padding:30px;
+
+      overflow:hidden;
+
+      transition:.3s ease;
     }
 
-    .apply-btn:hover {
-      transform: scale(1.02);
-      opacity: 0.94;
+    .job-card::before{
+      content:"";
+
+      position:absolute;
+      inset:0;
+
+      background:
+        linear-gradient(
+          140deg,
+          rgba(255,123,0,.08),
+          transparent 35%
+        );
+
+      opacity:0;
+      transition:.3s ease;
     }
 
-    .apply-btn.disabled {
-      background: #1e293b;
-      color: #64748b;
+    .job-card:hover{
+      transform:translateY(-8px);
 
-      cursor: not-allowed;
-      pointer-events: none;
+      border-color:rgba(255,123,0,.3);
+
+      box-shadow:
+        0 20px 50px rgba(0,0,0,.45),
+        0 0 40px rgba(255,123,0,.08);
+    }
+
+    .job-card:hover::before{
+      opacity:1;
+    }
+
+    .job-top{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+
+      margin-bottom:25px;
+    }
+
+    .job-icon{
+      width:62px;
+      height:62px;
+
+      border-radius:20px;
+
+      display:flex;
+      justify-content:center;
+      align-items:center;
+
+      font-size:1.6rem;
+
+      background:rgba(255,255,255,.05);
+      border:1px solid rgba(255,255,255,.05);
+    }
+
+    .badge{
+      padding:8px 14px;
+      border-radius:999px;
+
+      font-size:.8rem;
+      font-weight:800;
+    }
+
+    .badge.open{
+      background:var(--green-bg);
+      color:#4ade80;
+      border:1px solid rgba(34,197,94,.25);
+    }
+
+    .badge.closed{
+      background:var(--closed-bg);
+      color:#f87171;
+      border:1px solid rgba(239,68,68,.25);
+    }
+
+    .job-card h3{
+      font-size:1.7rem;
+      margin-bottom:15px;
+    }
+
+    .job-card p{
+      color:#cbd5e1;
+      line-height:1.8;
+      margin-bottom:28px;
+    }
+
+    .apply-btn{
+      display:flex;
+      justify-content:center;
+      align-items:center;
+
+      width:100%;
+      padding:16px;
+
+      border-radius:18px;
+
+      background:linear-gradient(
+        90deg,
+        var(--orange),
+        var(--red)
+      );
+
+      color:white;
+      font-weight:800;
+
+      transition:.25s ease;
+    }
+
+    .apply-btn:hover{
+      transform:scale(1.02);
+    }
+
+    .apply-btn.disabled{
+      background:#1e293b;
+      color:#64748b;
+
+      cursor:not-allowed;
+      pointer-events:none;
     }
 
     /* FOOTER */
 
-    footer {
-      text-align: center;
-      margin-top: 80px;
+    footer{
+      border-top:1px solid rgba(255,255,255,.06);
 
-      color: #64748b;
-      font-size: 0.95rem;
+      padding:35px 0;
+
+      text-align:center;
+      color:#64748b;
     }
 
     /* MOBILE */
 
-    @media (max-width: 700px) {
-      body {
-        padding: 40px 16px;
+    @media(max-width:950px){
+
+      .hero-grid{
+        grid-template-columns:1fr;
       }
 
-      .job-card {
-        padding: 24px;
+      .hero{
+        padding-top:40px;
       }
 
-      .job-card p {
-        min-height: auto;
+      .hero h1{
+        font-size:4.5rem;
       }
     }
+
+    @media(max-width:600px){
+
+      .hero h1{
+        font-size:3.3rem;
+      }
+
+      .section-title h2{
+        font-size:2.3rem;
+      }
+
+      .hero-buttons{
+        flex-direction:column;
+      }
+
+      .primary-btn,
+      .secondary-btn{
+        width:100%;
+        text-align:center;
+      }
+    }
+
   </style>
 </head>
 
@@ -264,205 +518,337 @@
 
   <div class="container">
 
+    <!-- NAVBAR -->
+
+    <nav class="navbar">
+
+      <div class="logo">
+        FOURTY<span>3000</span>
+      </div>
+
+      <a href="#jobs" class="nav-btn">
+        Voir les recrutements
+      </a>
+
+    </nav>
+
+    <!-- HERO -->
+
     <section class="hero">
 
-      <div class="hero-badge">
-        🚀 Recrutement Fourty3000
-      </div>
+      <div class="hero-grid">
 
-      <h1>Rejoins l'équipe</h1>
+        <div class="hero-left">
 
-      <p>
-        Participe au développement des projets Fourty3000 & Eminium.
-        Développement, modération, graphisme, évènementiel ou vidéo :
-        il y a forcément une place pour toi.
-      </p>
-
-    </section>
-
-    <section class="jobs-grid">
-
-      <!-- DEV -->
-
-      <div class="job-card">
-
-        <div class="top-row">
-          <div class="badge open">
-            🟢 Ouvert
+          <div class="mini-badge">
+            🚀 Recrutements ouverts 2026
           </div>
 
-          <div class="job-icon">💻</div>
-        </div>
+          <h1>
+            Crée l’univers
+            <span class="gradient">
+              Fourty3000
+            </span>
+          </h1>
 
-        <h2>Développeur</h2>
+          <p>
+            Rejoins une équipe créative autour de Minecraft,
+            Discord, vidéo, évènementiel et développement.
+            Participe à la création de projets ambitieux
+            pour une communauté francophone.
+          </p>
 
-        <p>
-          Développement des outils, systèmes et fonctionnalités liés
-          aux projets Fourty3000 et Eminium.
-        </p>
+          <div class="hero-buttons">
 
-        <a
-          class="apply-btn"
-          href="https://forms.gle/3siYBtX4nPQhiFpA8"
-          target="_blank"
-        >
-          Postuler
-        </a>
+            <a href="#jobs" class="primary-btn">
+              Rejoindre l’équipe
+            </a>
 
-      </div>
+            <a href="#" class="secondary-btn">
+              Discord Communauté
+            </a>
 
-      <!-- AES -->
-
-      <div class="job-card">
-
-        <div class="top-row">
-          <div class="badge open">
-            🟢 Ouvert
           </div>
 
-          <div class="job-icon">🎉</div>
         </div>
 
-        <h2>AES</h2>
+        <div class="hero-right">
 
-        <p>
-          Organisation des évènements, animation de la communauté
-          et support des joueurs sur les plateformes Eminium.
-        </p>
+          <div class="hero-card">
 
-        <a
-          class="apply-btn"
-          href="https://forms.gle/rSrvEKzKUQ7ErCXs5"
-          target="_blank"
-        >
-          Postuler
-        </a>
+            <div class="hero-card-top">
 
-      </div>
+              <div class="online">
+                <div class="dot"></div>
+                Recrutements actifs
+              </div>
 
-      <!-- GRAPHISTE -->
+              <span>2026</span>
 
-      <div class="job-card">
+            </div>
 
-        <div class="top-row">
-          <div class="badge open">
-            🟢 Ouvert
+            <h3>
+              Construisons quelque chose d’énorme.
+            </h3>
+
+            <p>
+              Que tu sois développeur, modérateur,
+              graphiste ou monteur, tu peux participer
+              à l’évolution de Fourty3000 & Eminium.
+            </p>
+
+            <div class="stats">
+
+              <div class="stat">
+                <h4>5</h4>
+                <span>Postes</span>
+              </div>
+
+              <div class="stat">
+                <h4>∞</h4>
+                <span>Projets</span>
+              </div>
+
+              <div class="stat">
+                <h4>24/7</h4>
+                <span>Créativité</span>
+              </div>
+
+            </div>
+
           </div>
 
-          <div class="job-icon">🎨</div>
         </div>
-
-        <h2>Graphiste</h2>
-
-        <p>
-          Création des visuels, miniatures, bannières et éléments
-          graphiques liés aux projets Fourty3000.
-        </p>
-
-        <a
-          class="apply-btn"
-          href="https://forms.gle/7YUd2C4gH1qR7N3C7"
-          target="_blank"
-        >
-          Postuler
-        </a>
-
-      </div>
-
-      <!-- MOD -->
-
-      <div class="job-card">
-
-        <div class="top-row">
-          <div class="badge open">
-            🟢 Ouvert
-          </div>
-
-          <div class="job-icon">🛡️</div>
-        </div>
-
-        <h2>Modérateur</h2>
-
-        <p>
-          Modération du Discord Fourty3000.
-          Possibilité d'évolution vers la modération YouTube et Twitch.
-        </p>
-
-        <a
-          class="apply-btn"
-          href="https://forms.gle/7YUd2C4gH1qR7N3C7"
-          target="_blank"
-        >
-          Postuler
-        </a>
-
-      </div>
-
-      <!-- VIDEO -->
-
-      <div class="job-card">
-
-        <div class="top-row">
-          <div class="badge open">
-            🟢 Ouvert
-          </div>
-
-          <div class="job-icon">🎬</div>
-        </div>
-
-        <h2>Monteur Vidéo</h2>
-
-        <p>
-          Montage des vidéos Fourty3000, shorts, teasers et contenus
-          destinés aux réseaux sociaux.
-        </p>
-
-        <a
-          class="apply-btn"
-          href="https://forms.gle/YaAmH1xeyNhmVbng7"
-          target="_blank"
-        >
-          Postuler
-        </a>
 
       </div>
 
     </section>
 
-    <footer>
-      © 2026 Fourty3000 • Tous droits réservés
-    </footer>
+    <!-- JOBS -->
+
+    <section class="jobs-section" id="jobs">
+
+      <div class="section-title">
+
+        <h2>
+          Postes Disponibles
+        </h2>
+
+        <p>
+          Clique sur un poste pour rejoindre l’aventure.
+        </p>
+
+      </div>
+
+      <div class="jobs-grid">
+
+        <!-- DEV -->
+
+        <div class="job-card" data-open="true">
+
+          <div class="job-top">
+
+            <div class="badge open">
+              🟢 Ouvert
+            </div>
+
+            <div class="job-icon">
+              💻
+            </div>
+
+          </div>
+
+          <h3>Développeur</h3>
+
+          <p>
+            Création des systèmes, outils et fonctionnalités
+            des projets Fourty3000 & Eminium.
+          </p>
+
+          <a
+            class="apply-btn"
+            href="https://forms.gle/3siYBtX4nPQhiFpA8"
+            target="_blank"
+          >
+            Postuler
+          </a>
+
+        </div>
+
+        <!-- AES -->
+
+        <div class="job-card" data-open="true">
+
+          <div class="job-top">
+
+            <div class="badge open">
+              🟢 Ouvert
+            </div>
+
+            <div class="job-icon">
+              🎉
+            </div>
+
+          </div>
+
+          <h3>AES</h3>
+
+          <p>
+            Organisation des évènements et animation
+            de la communauté sur les plateformes Eminium.
+          </p>
+
+          <a
+            class="apply-btn"
+            href="https://forms.gle/rSrvEKzKUQ7ErCXs5"
+            target="_blank"
+          >
+            Postuler
+          </a>
+
+        </div>
+
+        <!-- GRAPHISTE -->
+
+        <div class="job-card" data-open="false">
+
+          <div class="job-top">
+
+            <div class="badge open">
+              🟢 Ouvert
+            </div>
+
+            <div class="job-icon">
+              🎨
+            </div>
+
+          </div>
+
+          <h3>Graphiste</h3>
+
+          <p>
+            Création des miniatures, affiches,
+            identités visuelles et assets du projet.
+          </p>
+
+          <a
+            class="apply-btn"
+            href="https://forms.gle/7YUd2C4gH1qR7N3C7"
+            target="_blank"
+          >
+            Postuler
+          </a>
+
+        </div>
+
+        <!-- MOD -->
+
+        <div class="job-card" data-open="true">
+
+          <div class="job-top">
+
+            <div class="badge open">
+              🟢 Ouvert
+            </div>
+
+            <div class="job-icon">
+              🛡️
+            </div>
+
+          </div>
+
+          <h3>Modérateur</h3>
+
+          <p>
+            Modération Discord et possibilité
+            d’évolution vers Twitch et YouTube.
+          </p>
+
+          <a
+            class="apply-btn"
+            href="https://forms.gle/7YUd2C4gH1qR7N3C7"
+            target="_blank"
+          >
+            Postuler
+          </a>
+
+        </div>
+
+        <!-- VIDEO -->
+
+        <div class="job-card" data-open="true">
+
+          <div class="job-top">
+
+            <div class="badge open">
+              🟢 Ouvert
+            </div>
+
+            <div class="job-icon">
+              🎬
+            </div>
+
+          </div>
+
+          <h3>Monteur Vidéo</h3>
+
+          <p>
+            Montage des vidéos, shorts,
+            trailers et contenus réseaux sociaux.
+          </p>
+
+          <a
+            class="apply-btn"
+            href="https://forms.gle/YaAmH1xeyNhmVbng7"
+            target="_blank"
+          >
+            Postuler
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
 
   </div>
 
+  <footer>
+    © 2026 Fourty3000 • Tous droits réservés
+  </footer>
+
   <script>
+
     /*
-      Pour fermer un recrutement :
-
-      data-open="false"
-
-      Le script gère automatiquement
-      le badge + le bouton.
+      Gestion automatique du statut
+      par carte avec data-open
     */
 
     const cards = document.querySelectorAll(".job-card");
 
     cards.forEach((card) => {
-      const isOpen = card.dataset.open !== "false";
+
+      const isOpen = card.dataset.open === "true";
 
       const badge = card.querySelector(".badge");
       const button = card.querySelector(".apply-btn");
 
-      if (!isOpen) {
+      if(!isOpen){
+
         badge.classList.remove("open");
         badge.classList.add("closed");
+
         badge.textContent = "🔴 Fermé";
 
         button.classList.add("disabled");
+
         button.removeAttribute("href");
+
         button.textContent = "Recrutement Fermé";
       }
+
     });
+
   </script>
 
 </body>
